@@ -1,0 +1,6 @@
+#!/bin/bash
+
+docker run --rm \
+       -v "$(pwd)/tmux":/tmux \
+       -v /usr/local:/usr/local \
+       "fuco1/tmux-build:latest" -c "cd /tmux && make install"

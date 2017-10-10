@@ -1,0 +1,11 @@
+FROM fuco1/build-base:1.1
+
+RUN apt-get update && apt-get install -y \
+    libevent-dev \
+    ncurses-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY ./docker-build.sh /docker-build.sh
+
+ENTRYPOINT ["/bin/bash"]
+CMD ["/docker-build.sh"]
